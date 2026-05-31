@@ -401,6 +401,196 @@ a { color: inherit; text-decoration: none; }
   background: var(--accent-glow);
 }
 
+/* ===================== Timeline (Experience) ===================== */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg2);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  transition: border-color .2s;
+}
+.timeline-content:hover { border-color: var(--accent); }
+
+.timeline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.timeline-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.timeline-company {
+  font-size: 0.9rem;
+  color: var(--accent2);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.timeline-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-family: var(--mono);
+}
+
+.timeline-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.timeline-bullets li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+.timeline-bullets li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.timeline-tags span {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* ===================== Education ===================== */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  display: flex;
+  gap: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color .2s, transform .2s;
+}
+.edu-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.edu-icon { font-size: 2.2rem; flex-shrink: 0; }
+
+.edu-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.edu-field { font-size: 0.87rem; color: var(--accent2); font-weight: 500; margin-bottom: 4px; }
+.edu-school { font-size: 0.87rem; color: var(--text-muted); margin-bottom: 6px; }
+.edu-meta { font-size: 0.82rem; color: var(--text-muted); font-family: var(--mono); }
+.edu-meta strong { color: var(--accent); }
+
+/* ===================== Certifications ===================== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: border-color .2s, transform .2s;
+  position: relative;
+}
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.cert-card.featured { border-color: rgba(124,106,247,0.4); }
+.cert-card.featured:hover { border-color: var(--accent); }
+
+.cert-issuer-logo { font-size: 1.6rem; flex-shrink: 0; }
+.cert-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+.cert-issuer { font-size: 0.8rem; color: var(--text-muted); }
+
+.cert-featured-tag {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
 /* ===================== Projects ===================== */
 .projects-grid {
   display: grid;

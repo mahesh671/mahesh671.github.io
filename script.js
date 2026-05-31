@@ -60,7 +60,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(
-  '.stat-card, .skill-group, .project-card, .focus-item, .contact-card, .about-text, .tech-tag'
+  '.stat-card, .skill-group, .project-card, .focus-item, .contact-card, .about-text, .tech-tag, .timeline-item, .edu-card, .cert-card'
 ).forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
